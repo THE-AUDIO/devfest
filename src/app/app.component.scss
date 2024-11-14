@@ -1,0 +1,169 @@
+$main: #35105e;
+$secondary: rgb(15, 15, 15);
+$teritiary: #f0f0f0;
+/* From Uiverse.io by kleenpulse */ 
+.btn {
+    --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+    --border-width: 0.125em;
+    --curve-size: 0.5em;
+    --blur: 30px;
+    --bg: #080312;
+    --color: #afffff;
+    color: var(--color);
+    cursor: pointer;
+    /* use position: relative; so that BG is only for .btn */
+    position: relative;
+    isolation: isolate;
+    display: inline-grid;
+    place-content: center;
+    padding: 0.5em 1.5em;
+    font-size: 17px;
+    border: 0;
+    text-transform: uppercase;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+    clip-path: polygon(
+      /* Top-left */ 0% var(--curve-size),
+      var(--curve-size) 0,
+      /* top-right */ 100% 0,
+      100% calc(100% - var(--curve-size)),
+      /* bottom-right 1 */ calc(100% - var(--curve-size)) 100%,
+      /* bottom-right 2 */ 0 100%
+    );
+    transition: color 250ms;
+  }
+  
+  .btn::after,
+  .btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+  
+  .btn::before {
+    background: var(--border-color);
+    background-size: 300% 300%;
+    animation: move-bg7234 5s ease infinite;
+    z-index: -2;
+  }
+  
+  @keyframes move-bg7234 {
+    0% {
+      background-position: 31% 0%;
+    }
+  
+    50% {
+      background-position: 70% 100%;
+    }
+  
+    100% {
+      background-position: 31% 0%;
+    }
+  }
+  
+  .btn::after {
+    background: var(--bg);
+    z-index: -1;
+    clip-path: polygon(
+      /* Top-left */ var(--border-width)
+        calc(var(--curve-size) + var(--border-width) * 0.5),
+      calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+      /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+      calc(100% - var(--border-width))
+        calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+      /* bottom-right 1 */
+        calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+        calc(100% - var(--border-width)),
+      /* bottom-right 2 */ var(--border-width) calc(100% - var(--border-width))
+    );
+    transition: clip-path 500ms;
+  }
+  
+  .btn:where(:hover, :focus)::after {
+    clip-path: polygon(
+      /* Top-left */ calc(100% - var(--border-width))
+        calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+      calc(100% - var(--border-width)) var(--border-width),
+      /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+      calc(100% - var(--border-width))
+        calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+      /* bottom-right 1 */
+        calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+        calc(100% - var(--border-width)),
+      /* bottom-right 2 */
+        calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+        calc(100% - var(--border-width))
+    );
+    transition: 200ms;
+  }
+  
+  .btn:where(:hover, :focus) {
+    color: #fff;
+  }
+  
+  
+.home{
+    background: $secondary;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    .nav-barre{
+        margin: 0 auto;
+        height: 10vh;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .logo{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 20%;
+            color: $teritiary;
+            font-size: 2rem;
+            font-family: "devfest24";
+            height: 100%;
+        }
+        .element{
+            width: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            color: $teritiary;
+            font-family: "devfest24";
+            span{
+                cursor: pointer;
+                position: relative;
+                &::before{  
+                    transition: 250ms ease-in-out;
+                    position: absolute;
+                    content: "";
+                    width: 0%;
+                    height:  4px; 
+                    bottom: -.5rem;
+                    background-color: $teritiary;
+                    transform: translate(-50%);
+                    left: 50%;
+                }
+             &:hover::before{
+                width: 100%;
+             }
+            }
+        }
+    }
+}
+.presentation{
+    margin: 0 auto;
+    .pres__left{
+        .title{
+            span{
+                font-family: "devfest24";
+                font-size: 3rem;
+                color: $teritiary;
+            }
+        }
+        .subtitle{
+            color: $teritiary;
+        }
+    }
+}
