@@ -156,8 +156,8 @@ $teritiary: #f0f0f0;
     margin: 0 auto;
     .pres__left{
         .title{
+            font-family: "devfest24";
             span{
-                font-family: "devfest24";
                 font-size: 3rem;
                 color: $teritiary;
             }
@@ -166,4 +166,8 @@ $teritiary: #f0f0f0;
             color: $teritiary;
         }
     }
+}
+ngt-canvas{
+    width:100%;
+    height: 100%;
 }
