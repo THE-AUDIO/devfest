@@ -1,29 +1,43 @@
-
 <div class="home">
-    <nav class="nav-barre">
-      <div class="logo">
-        <span>VR-BOX</span>
+  <nav class="nav-barre">
+    <div class="logo">
+      <span>VR-BOX</span>
+    </div>
+    <div class="element">
+      <span>HOME</span><span>ABOUT US</span><span>PRODUCT</span><span>APP & GAME</span><span>CONTACT US</span>
+    </div>
+    <div class="start">
+      <button class="btn">GET STARTED</button>
+    </div>
+  </nav>
+  <section class="presentation w-[80%] h-[70vh] flex justify-center items-center flex-row">
+    <div class="pres__left w-1/2 h-full flex justify-center items-start flex-col">
+      <div class="title w-full h-1/2 flex justify-center items-start flex-col">
+        <span>VIRTUAL REALITY</span>
+        <span>EXPLORE YOUR </span>
+        <span>BEAUTIFUL MIND</span>
       </div>
-      <div class="element">
-        <span>HOME</span><span>ABOUT US</span><span>PRODUCT</span><span>APP & GAME</span><span>CONTACT US</span>
+      <div class="subtitle w-5/6 ">
+        <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus quos deleniti neque, incidunt
+          veritatis eveniet.</span>
       </div>
-      <div class="start">
-        <button class="btn">GET STARTED</button>
+    </div>
+    <div class="pres__right w-1/2 h-full overflow-hidden flex justify-center items-center" id="3d">
+      <!-- Affiche le globe seulement côté client -->
+        <om-three-globe [globeConfig]="{
+          globeColor: '#11263f',
+          autoRotateSpeed: 0.8
+        }" [arcAndRingColors]="['#ff6b6b', '#f06595', '#faa2c1']">
+        </om-three-globe>
+    </div>
+  </section>
+  <div class="cadre w-1/2">
+    <om-border-beam>
+      <div class="container-wrapper">
+          <h1 class="border-beam-title">
+             WEE ARE PRIME ORIGINES
+          </h1>
       </div>
-    </nav>
-    <section class="presentation w-[80%] h-[90vh] flex justify-center items-center flex-row">
-       <div class="pres__left w-1/2 h-full flex justify-center items-start flex-col">
-        <div class="title w-full h-1/2 flex justify-center items-start flex-col">
-            <span>VIRTUAL REALITY</span>
-            <span>EXPLORE YOUR </span>
-            <span>BEAUTIFUL MIND</span>
-        </div>
-        <div class="subtitle w-5/6 ">
-          <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus quos deleniti neque, incidunt veritatis eveniet.</span>
-        </div>
-       </div>
-       <div class="pres__right w-1/2 h-full overflow-hidden flex justify-center items-center">
-            <ngt-canvas [sceneGraph]="sceneGraph" />
-       </div>
-    </section>
+  </om-border-beam>
+  </div>
 </div>
