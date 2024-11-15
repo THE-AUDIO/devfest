@@ -100,9 +100,11 @@ $teritiary: #f0f0f0;
     color: #fff;
   }
   
-  
+body{
+  background: $secondary;
+}
 .home{
-    background: $secondary;
+  background: $secondary;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -160,6 +162,7 @@ $teritiary: #f0f0f0;
             span{
                 font-size: 3rem;
                 color: $teritiary;
+                font-weight: 100;
             }
         }
         .subtitle{
@@ -193,4 +196,14 @@ $teritiary: #f0f0f0;
 }
 .cadre{
   margin: 0 auto;
+}
+section{
+  background: $secondary;
+}
+.meteo{
+  width: 100%;
+}
+:host {
+  display: block;
+  height: 100dvh;
 }
